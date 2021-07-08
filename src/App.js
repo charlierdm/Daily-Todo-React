@@ -1,11 +1,25 @@
-import './App.css';
-import { TodoInput } from './TodoInput';
-import { TodoList } from './TodoList';
+import "./App.css";
+import uuid from "react-uuid";
+import { useState } from "react";
+import { TodoInput } from "./TodoInput";
+import { TodoList } from "./TodoList";
 
 function App() {
+  const [todoItem, setTodoItem] = useState({});
+  const [todoList, setTodoList] = useState([]);
+
+  const addItemToList = (item) => {
+    const newItem = {
+      id: uuid(),
+      item: todoItem,
+    };
+
+
+  };
+
   return (
     <div className="TodoContainer">
-      <TodoInput />
+      <TodoInput setTodoItem={setTodoItem} />
       <TodoList />
     </div>
   );
