@@ -1,7 +1,9 @@
-export const TodoList = () => {
+export const TodoList = (props) => {
   return (
-    <div>
-      TodoList
+    <div className="todo-list">
+      {props.todoList.map(
+      todo => <p>{todo.item}</p>
+      )}
     </div>
   )
 }

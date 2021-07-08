@@ -8,19 +8,19 @@ function App() {
   const [todoItem, setTodoItem] = useState({});
   const [todoList, setTodoList] = useState([]);
 
-  const addItemToList = (item) => {
+  const addItemToList = () => {
     const newItem = {
       id: uuid(),
       item: todoItem,
     };
-
-
+    const updatedItems = [...todoList, newItem];
+    setTodoList(updatedItems);
   };
 
   return (
     <div className="TodoContainer">
-      <TodoInput setTodoItem={setTodoItem} />
-      <TodoList />
+      <TodoInput setTodoItem={setTodoItem} addItem={addItemToList} />
+      <TodoList todoList={todoList}/>
     </div>
   );
 }

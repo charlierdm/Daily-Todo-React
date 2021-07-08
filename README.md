@@ -1,14 +1,18 @@
 # Daily-Todo-React
 
-The aim of this project is to create a web application in which daily tasks can be entered, creating a list of entries which may then be edited or removed. 
+The aim of this project is to create a web application in which daily tasks can be entered, edited and removed.
 
 By creating this application, I will be practicing and learning more about React, which is my overarching goal for this project. 
 
+![todolist](https://user-images.githubusercontent.com/75075773/124944009-e4ea8d80-e004-11eb-9b78-ab1d2da778d1.jpg)
+
+
 ### Learning objectives and skills exercised:
 
-* Passing props to components. 
-* Setting state using hooks (Setting a Todo item and passing it to the list.)
+* Passing props to child components. 
+* Setting state using hooks lifting state up. (Setting a Todo item and passing it to the list.)
 * Using uuid to create unique keys per Todo item. 
+* Using the spread operator to populate an array.
 * Creating a pleasing front end experience for clarity of the day ahead. 
 
 
@@ -31,3 +35,4 @@ Run the following to start the server and navigate to http://localhost:3000/ in 
 ```
 $ npm start
 ```
+
