@@ -8,6 +8,7 @@ export const TodoInput = (props) => {
     <div className="todo-input">
       <form onSubmit={(e) => handleSubmit(e)}>
         <input
+          value={props.todoItem}
           type="text"
           placeholder="Enter a Todo"
           onChange={(e) => props.setTodoItem(e.target.value)}

@@ -6,7 +6,7 @@ import { TodoInput } from "./TodoInput";
 import { TodoList } from "./TodoList";
 
 function App() {
-  const [todoItem, setTodoItem] = useState({});
+  const [todoItem, setTodoItem] = useState("");
   const [todoList, setTodoList] = useState([]);
 
   const addItemToList = () => {
@@ -16,12 +16,13 @@ function App() {
     };
     const updatedItems = [...todoList, newItem];
     setTodoList(updatedItems);
+    setTodoItem("");
   };
 
   return (
     <div className="TodoContainer">
       <Header />
-      <TodoInput setTodoItem={setTodoItem} addItem={addItemToList} />
+      <TodoInput todoItem={todoItem} setTodoItem={setTodoItem} addItem={addItemToList}/>
       <TodoList todoList={todoList}/>
     </div>
   );
