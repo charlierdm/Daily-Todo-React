@@ -6,7 +6,16 @@
   margin-top: 2%;
 }
 
+h1 {
+  color: rgb(67, 110, 175);
+}
+
+input {
+  border: none;
+}
+
 .todo-list {
+  text-align: center;
   margin-top: 10%;
 }
 
@@ -14,3 +23,5 @@
   border: none;
   background: none;
 }
+
+

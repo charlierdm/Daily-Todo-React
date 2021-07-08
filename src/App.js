@@ -19,11 +19,15 @@ function App() {
     setTodoItem("");
   };
 
+  const clearList = () => {
+    setTodoList([]);
+  }
+
   return (
     <div className="TodoContainer">
       <Header />
       <TodoInput todoItem={todoItem} setTodoItem={setTodoItem} addItem={addItemToList}/>
-      <TodoList todoList={todoList}/>
+      <TodoList todoList={todoList} clearList={clearList}/>
     </div>
   );
 }
