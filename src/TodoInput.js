@@ -14,7 +14,11 @@ export const TodoInput = (props) => {
           onChange={(e) => props.setTodoItem(e.target.value)}
         />
         <button className="button-input">
-          <img src={process.env.PUBLIC_URL + "/plus.svg"} width="10px" alt="plus-symbol"/>
+          <img
+            src={process.env.PUBLIC_URL + "/plus.svg"}
+            width="10px"
+            alt="plus-symbol"
+          />
         </button>
       </form>
     </div>

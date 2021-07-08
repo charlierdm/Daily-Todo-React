@@ -21,13 +21,26 @@ function App() {
 
   const clearList = () => {
     setTodoList([]);
-  }
+  };
+
+  const handleDeleteItem = (id) => {
+    const newFilteredArray = todoList.filter((todo) => todo.id !== id);
+    setTodoList(newFilteredArray);
+  };
 
   return (
     <div className="TodoContainer">
       <Header />
-      <TodoInput todoItem={todoItem} setTodoItem={setTodoItem} addItem={addItemToList}/>
-      <TodoList todoList={todoList} clearList={clearList}/>
+      <TodoInput
+        todoItem={todoItem}
+        setTodoItem={setTodoItem}
+        addItem={addItemToList}
+      />
+      <TodoList
+        todoList={todoList}
+        clearList={clearList}
+        deleteItem={handleDeleteItem}
+      />
     </div>
   );
 }

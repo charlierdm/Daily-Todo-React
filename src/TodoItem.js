@@ -14,6 +14,7 @@ export const TodoItem = (props) => {
           src={process.env.PUBLIC_URL + "/delete.svg"}
           width="15px"
           alt="plus-symbol"
+          onClick={() => props.deleteItem()}
         />
       </p>
     </div>
