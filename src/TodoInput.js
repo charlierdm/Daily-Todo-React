@@ -13,7 +13,9 @@ export const TodoInput = (props) => {
           placeholder="Enter a Todo"
           onChange={(e) => props.setTodoItem(e.target.value)}
         />
-        <button>++</button>
+        <button className="button-input">
+          <img src={process.env.PUBLIC_URL + "/plus.svg"} width="10px" alt="plus-symbol"/>
+        </button>
       </form>
     </div>
   );

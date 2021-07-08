@@ -9,3 +9,8 @@
 .todo-list {
   margin-top: 10%;
 }
+
+.button-input {
+  border: none;
+  background: none;
+}
