@@ -8,6 +8,7 @@ export const TodoItem = (props) => {
           src={process.env.PUBLIC_URL + "/edit.svg"}
           width="15px"
           alt="plus-symbol"
+          onClick={() => props.editItem()}
         />
         <img
           className="edit-delete-svg"

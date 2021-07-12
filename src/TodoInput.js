@@ -2,6 +2,7 @@ export const TodoInput = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     props.addItem();
+    props.setEdit(false)
   };
 
   return (
@@ -13,13 +14,23 @@ export const TodoInput = (props) => {
           placeholder="Enter a Todo"
           onChange={(e) => props.setTodoItem(e.target.value)}
         />
-        <button className="button-input">
-          <img
-            src={process.env.PUBLIC_URL + "/plus.svg"}
-            width="10px"
-            alt="plus-symbol"
-          />
-        </button>
+        {props.edit ? (
+          <button className="button-input">
+            <img
+              src={process.env.PUBLIC_URL + "/edit.svg"}
+              width="10px"
+              alt="plus-symbol"
+            />
+          </button>
+        ) : (
+          <button className="button-input">
+            <img
+              src={process.env.PUBLIC_URL + "/plus.svg"}
+              width="10px"
+              alt="plus-symbol"
+            />
+          </button>
+        )}
       </form>
     </div>
   );

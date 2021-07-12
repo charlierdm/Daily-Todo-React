@@ -5,7 +5,7 @@ export const TodoList = (props) => {
     <div className="todo-list">
       <div className="todo-item">
         {props.todoList.map((todo) => (
-          <TodoItem item={todo.item} key={todo.id} deleteItem={() => props.deleteItem(todo.id)}/>
+          <TodoItem item={todo.item} key={todo.id} deleteItem={() => props.deleteItem(todo.id)} editItem={() => props.editItem(todo.id)}/>
         ))}
         {props.todoList.length >= 1 && (
           <button onClick={() => props.clearList()}>Clear List</button>

@@ -8,6 +8,7 @@ import { TodoList } from "./TodoList";
 function App() {
   const [todoItem, setTodoItem] = useState("");
   const [todoList, setTodoList] = useState([]);
+  const [editItem, setEditItem] = useState(false);
 
   const addItemToList = () => {
     const newItem = {
@@ -28,6 +29,15 @@ function App() {
     setTodoList(newFilteredArray);
   };
 
+  const handleEditItem = (id) => {
+    const newFilteredArray = todoList.filter((todo) => todo.id !== id);
+    const selectItem = todoList.find((item) => item.id === id);
+
+    setEditItem(true);
+    setTodoItem(selectItem.item);
+    setTodoList(newFilteredArray);
+  };
+
   return (
     <div className="TodoContainer">
       <Header />
@@ -35,11 +45,14 @@ function App() {
         todoItem={todoItem}
         setTodoItem={setTodoItem}
         addItem={addItemToList}
+        edit={editItem}
+        setEdit={setEditItem}
       />
       <TodoList
         todoList={todoList}
         clearList={clearList}
         deleteItem={handleDeleteItem}
+        editItem={handleEditItem}
       />
     </div>
   );
