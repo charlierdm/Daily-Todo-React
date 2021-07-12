@@ -15,15 +15,16 @@ export const TodoInput = (props) => {
           onChange={(e) => props.setTodoItem(e.target.value)}
         />
         <button className={props.edit ? "button-edit" : "button-input"}>
+          {props.edit ? "edit todo " : "add todo "}
           <img
             src={
               props.edit
                 ? process.env.PUBLIC_URL + "/edit.svg"
                 : process.env.PUBLIC_URL + "/plus.svg"
             }
-            width="10px"
+            width="15px"
             alt={props.edit ? "edit symbol" : "plus-symbol"}
-          /> {props.edit ? "edit todo" : "add todo"}
+          />
         </button>
       </form>
     </div>

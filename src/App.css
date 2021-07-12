@@ -6,35 +6,53 @@
   margin-top: 2%;
 }
 
-h1 {
-  color: rgb(67, 110, 175);
-}
-
 input {
   border: none;
   border: none;
   border-radius: 10%;
   padding: 2%;
+  font-size: 20px;
 }
 
 .todo-list {
   text-align: center;
-  margin-top: 10%;
+  margin-top: 4%;
+  font-size: 20px;
+  border-radius: 5%;
+  border-radius: 5%;
+  background-color: #dceff3;
+  border-color: #acacac;
+}
+
+.todo-item {
+  font-size: 25px;
+  margin: auto;
+}
+
+.svg {
+  padding-left: 6em;
+  padding-right:6em
 }
 
 button {
-  margin-top:2%;
+  margin-top:6%;
   margin-inline: auto;
   display: block;
   border: none;
-  border-radius: 10%;
+  border-radius: 6%;
   color: #eeeeee;
+  font-size: 20px;
 }
 
-.button-input, .button-clear {
+.button-input {
   background-color: #8b8b8b;
 }
 
 .button-edit {  
   background-color: #00a838;
+}
+
+.button-clear {
+  background-color: rgb(185, 89, 89);
+  margin-bottom: 0.5em;
 }
