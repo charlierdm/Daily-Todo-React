@@ -12,6 +12,9 @@ h1 {
 
 input {
   border: none;
+  border: none;
+  border-radius: 10%;
+  padding: 2%;
 }
 
 .todo-list {
@@ -19,9 +22,19 @@ input {
   margin-top: 10%;
 }
 
-.button-input {
+button {
+  margin-top:2%;
+  margin-inline: auto;
+  display: block;
   border: none;
-  background: none;
+  border-radius: 10%;
+  color: #eeeeee;
 }
 
+.button-input, .button-clear {
+  background-color: #8b8b8b;
+}
 
+.button-edit {  
+  background-color: #00a838;
+}
