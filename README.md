@@ -20,6 +20,26 @@ By creating this application, I will be practicing and learning more about React
 
 ![Daily-Todo-React (2)](https://user-images.githubusercontent.com/75075773/124942566-aa342580-e003-11eb-8993-4dd969e7f24d.png)
 
+# User Stories
+
+```
+As a Maker,
+I would like to create a list of my daily todo tasks.
+
+As a Maker,
+I would like to able to edit a todo item if it changes for any reason.
+
+As a Maker,
+So that I can track what I've completed, I'd like to be able to check off my todo items.
+
+As a Maker,
+I would like to delete a todo item if I no longer need to complete that task.
+
+As a Maker, 
+So that I can quickly delete my list of todos, I would like to be able to clear the list. 
+
+```
+
 
 # Installation
 

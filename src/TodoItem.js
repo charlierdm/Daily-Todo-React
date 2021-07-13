@@ -1,8 +1,9 @@
 export const TodoItem = (props) => {
   return (
     <div className="todo-item">
-      <p key={props.id}>
+      <div key={props.id}>
         {props.item}
+        <input className="checkbox"type="checkbox"/>
         <br></br>
         <div className="svg">
           <img
@@ -20,7 +21,7 @@ export const TodoItem = (props) => {
             onClick={() => props.deleteItem()}
           />
         </div>
-      </p>
+      </div>
     </div>
   );
 };

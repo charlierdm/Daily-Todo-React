@@ -26,7 +26,13 @@ input {
 
 .todo-item {
   font-size: 25px;
-  margin: auto;
+  margin: 5px;
+  padding-left: 1em;
+  padding-right:1em
+}
+
+.checkbox {
+  background-color: rgb(222, 243, 242);
 }
 
 .svg {
