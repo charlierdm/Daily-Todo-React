@@ -4,7 +4,9 @@ The aim of this project is to create a web application in which daily tasks can 
 
 By creating this application, I will be practicing and learning more about React, which is my overarching goal for this project. 
 
-![todolist](https://user-images.githubusercontent.com/75075773/124944009-e4ea8d80-e004-11eb-9b78-ab1d2da778d1.jpg)
+![dailytodo](https://user-images.githubusercontent.com/75075773/125493194-9c38c6e6-0502-4895-8ff5-049e4f3302d0.gif)
+![chittergifFinal2](https://user-images.githubusercontent.com/75075773/125493201-67b5fd4a-bc4d-4f5c-a164-d08f549d6650.gif)
+
 
 
 ### Learning objectives and skills exercised:
