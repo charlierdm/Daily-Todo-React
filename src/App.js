@@ -17,6 +17,7 @@ function App() {
     };
     const updatedItems = [...todoList, newItem];
     setTodoList(updatedItems);
+    window.localStorage.setItem("todoList", JSON.stringify(todoList))
     setTodoItem("");
   };
 

@@ -11,7 +11,7 @@ export const TodoInput = (props) => {
         <input
           value={props.todoItem}
           type="text"
-          placeholder="Enter a Todo"
+          placeholder="Enter a Todo..."
           onChange={(e) => props.setTodoItem(e.target.value)}
         />
         <button className={props.edit ? "button-edit" : "button-input"}>
@@ -22,7 +22,7 @@ export const TodoInput = (props) => {
                 ? process.env.PUBLIC_URL + "/edit.svg"
                 : process.env.PUBLIC_URL + "/plus.svg"
             }
-            width="15px"
+            width="12px"
             alt={props.edit ? "edit symbol" : "plus-symbol"}
           />
         </button>

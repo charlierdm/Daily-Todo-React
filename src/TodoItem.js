@@ -2,10 +2,8 @@ export const TodoItem = (props) => {
   return (
     <div className="todo-item">
       <div key={props.id}>
-        {props.item}
-        <input className="checkbox"type="checkbox"/>
-        <br></br>
-        <div className="svg">
+        <input className="checkbox" type="checkbox" />
+        {`${props.item}  `}
           <img
             className="edit-delete-svg"
             src={process.env.PUBLIC_URL + "/edit.svg"}
@@ -20,7 +18,6 @@ export const TodoItem = (props) => {
             alt="plus-symbol"
             onClick={() => props.deleteItem()}
           />
-        </div>
       </div>
     </div>
   );
