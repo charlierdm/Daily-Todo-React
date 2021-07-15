@@ -17,9 +17,9 @@ export const TodoList = (props) => {
           </div>
           {props.todoList.length >= 1 && (
             <button className="button-clear" onClick={() => props.clearList()}>
-              {"Clear List "}
+              Clear List
               <img
-                className="edit-delete-svg"
+                className="delete-svg"
                 src={process.env.PUBLIC_URL + "/delete.svg"}
                 width="15px"
                 alt="plus-symbol"
@@ -31,4 +31,3 @@ export const TodoList = (props) => {
     </>
   );
 };
-

@@ -11,18 +11,19 @@ export const TodoInput = (props) => {
         <input
           value={props.todoItem}
           type="text"
-          placeholder="Enter a Todo..."
+          placeholder="Enter a Todo"
           onChange={(e) => props.setTodoItem(e.target.value)}
         />
         <button className={props.edit ? "button-edit" : "button-input"}>
-          {props.edit ? "edit todo " : "add todo "}
+          {props.edit ? "edit todo" : "add todo"}
           <img
+            className={props.edit ? "edit-svg" : "input-svg"}
             src={
               props.edit
                 ? process.env.PUBLIC_URL + "/edit.svg"
                 : process.env.PUBLIC_URL + "/plus.svg"
             }
-            width="12px"
+            width="10px"
             alt={props.edit ? "edit symbol" : "plus-symbol"}
           />
         </button>
