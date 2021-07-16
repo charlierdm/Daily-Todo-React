@@ -12,8 +12,6 @@ function App() {
   const [todoList, setTodoList] = useState(localStorageLoad);
   const [editItem, setEditItem] = useState(false);
 
-  console.log(todoList);
-
   const addItemToList = () => {
     const newItem = {
       id: uuid(),
@@ -26,8 +24,8 @@ function App() {
     setTodoItem("");
   };
 
-  const setLocalStorage = (arr) => {
-    window.localStorage.setItem("todoList", JSON.stringify(arr));
+  const setLocalStorage = (list) => {
+    window.localStorage.setItem("todoList", JSON.stringify(list));
   };
 
   const clearList = () => {

@@ -12,6 +12,7 @@ By creating this application, I will be practicing and learning more about React
 
 * Passing props to child components. 
 * Setting state using hooks and lifting state up. (Setting a Todo item and passing it to the list.)
+* Using LocalStorage to enable Todo items to persist across sessions.
 * Using uuid to create unique keys per Todo item. 
 * Using the spread operator to populate an array.
 * Creating a pleasing front end experience for clarity of the day ahead. 
@@ -38,6 +39,9 @@ I would like to delete a todo item if I no longer need to complete that task.
 
 As a Maker, 
 So that I can quickly delete my list of todos, I would like to be able to clear the list. 
+
+As a Maker,
+So that I can return to my todo list later, I would like my list to persist across sessions.
 
 ```
 

@@ -8,7 +8,7 @@ export const TodoItem = (props) => {
           onChange={() => props.setCheck()}
           defaultChecked={props.checkItem}
         />
-        {`${props.item}  `}
+        {props.item}
         <img
           className="edit-svg"
           src={process.env.PUBLIC_URL + "/edit.svg"}
