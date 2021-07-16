@@ -2,7 +2,12 @@ export const TodoItem = (props) => {
   return (
     <div className="todo-item">
       <div key={props.id}>
-        <input className="checkbox" type="checkbox"/>
+        <input
+          className="checkbox"
+          type="checkbox"
+          onChange={() => props.setCheck()}
+          defaultChecked={props.checkItem}
+        />
         {`${props.item}  `}
         <img
           className="edit-svg"

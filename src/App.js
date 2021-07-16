@@ -7,14 +7,18 @@ import { TodoList } from "./TodoList";
 
 function App() {
   const localStorageLoad = JSON.parse(localStorage.todoList) || {};
+
   const [todoItem, setTodoItem] = useState("");
   const [todoList, setTodoList] = useState(localStorageLoad);
   const [editItem, setEditItem] = useState(false);
+
+  console.log(todoList);
 
   const addItemToList = () => {
     const newItem = {
       id: uuid(),
       item: todoItem,
+      check: false,
     };
     const updatedItems = [...todoList, newItem];
     setTodoList(updatedItems);
@@ -28,7 +32,7 @@ function App() {
 
   const clearList = () => {
     setTodoList([]);
-    setLocalStorage([])
+    setLocalStorage([]);
   };
 
   const handleDeleteItem = (id) => {
@@ -47,6 +51,12 @@ function App() {
     setTodoList(newFilteredArray);
   };
 
+  const handleSetCheck = (id) => {
+    const selectItem = todoList.find((item) => item.id === id);
+    selectItem.check = !selectItem.check;
+    setLocalStorage(todoList);
+  };
+
   return (
     <div className="TodoContainer">
       <Header />
@@ -62,6 +72,7 @@ function App() {
         clearList={clearList}
         deleteItem={handleDeleteItem}
         editItem={handleEditItem}
+        setCheck={handleSetCheck}
       />
     </div>
   );

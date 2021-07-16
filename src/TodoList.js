@@ -10,8 +10,10 @@ export const TodoList = (props) => {
               <TodoItem
                 item={todo.item}
                 key={todo.id}
+                checkItem={todo.check}
                 deleteItem={() => props.deleteItem(todo.id)}
                 editItem={() => props.editItem(todo.id)}
+                setCheck={() => props.setCheck(todo.id)}
               />
             ))}
           </div>
