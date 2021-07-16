@@ -6,8 +6,9 @@ import { TodoInput } from "./TodoInput";
 import { TodoList } from "./TodoList";
 
 function App() {
+  const localStorageLoad = JSON.parse(localStorage.todoList) || {};
   const [todoItem, setTodoItem] = useState("");
-  const [todoList, setTodoList] = useState([]);
+  const [todoList, setTodoList] = useState(localStorageLoad);
   const [editItem, setEditItem] = useState(false);
 
   const addItemToList = () => {
@@ -17,16 +18,22 @@ function App() {
     };
     const updatedItems = [...todoList, newItem];
     setTodoList(updatedItems);
-    window.localStorage.setItem("todoList", JSON.stringify(todoList));
+    setLocalStorage(updatedItems);
     setTodoItem("");
+  };
+
+  const setLocalStorage = (arr) => {
+    window.localStorage.setItem("todoList", JSON.stringify(arr));
   };
 
   const clearList = () => {
     setTodoList([]);
+    setLocalStorage([])
   };
 
   const handleDeleteItem = (id) => {
     const newFilteredArray = todoList.filter((todo) => todo.id !== id);
+    setLocalStorage(newFilteredArray);
     setTodoList(newFilteredArray);
   };
 
@@ -36,6 +43,7 @@ function App() {
 
     setEditItem(true);
     setTodoItem(selectItem.item);
+    setLocalStorage(newFilteredArray);
     setTodoList(newFilteredArray);
   };
 

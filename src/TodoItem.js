@@ -2,7 +2,7 @@ export const TodoItem = (props) => {
   return (
     <div className="todo-item">
       <div key={props.id}>
-        <input className="checkbox" type="checkbox" />
+        <input className="checkbox" type="checkbox"/>
         {`${props.item}  `}
         <img
           className="edit-svg"
