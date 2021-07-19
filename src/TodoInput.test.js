@@ -2,6 +2,8 @@ import { render, screen, fireEvent } from "@testing-library/react";
 import React from "react";
 import { TodoInput } from "./TodoInput";
 
+const mockCallBack = jest.fn();
+
 it("renders the input form", () => {
   render(<TodoInput />);
   const input = screen.getByPlaceholderText("Enter a Todo");
@@ -15,7 +17,7 @@ it("renders the input button", () => {
 })
 
 it("accepts user input", () => {
-  render(<TodoInput setTodoItem={() => {}} />);
+  render(<TodoInput setTodoItem={mockCallBack} />);
   const input = screen.getByPlaceholderText("Enter a Todo");
   fireEvent.change(input, { target: { value: "Wash my clothes" } });
   expect(input.value).toEqual("Wash my clothes")

@@ -5,6 +5,7 @@ export const TodoItem = (props) => {
         <input
           className="checkbox"
           type="checkbox"
+          data-testid="checkbox"
           onChange={() => props.setCheck()}
           defaultChecked={props.checkItem}
         />
