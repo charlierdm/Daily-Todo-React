@@ -8,7 +8,7 @@ export const TodoList = (props) => {
   return (
     <>
       {props.todoList.length >= 1 && (
-        <div className="todo-list">
+        <div className="todo-list" >
           <div className="todo-item">
             {props.todoList.map((todo) => (
               <TodoItem
@@ -18,6 +18,7 @@ export const TodoList = (props) => {
                 deleteItem={() => props.deleteItem(todo.id)}
                 editItem={() => props.editItem(todo.id)}
                 setCheck={() => props.setCheck(todo.id)}
+                data-testid="list-item"
               />
             ))}
           </div>
