@@ -1,6 +1,11 @@
 import { TodoItem } from "./TodoItem";
 
 export const TodoList = (props) => {
+
+  const clearList = () => {
+    props.setTodoList([]);
+  };
+
   return (
     <>
       {props.todoList.length >= 1 && (
@@ -18,7 +23,7 @@ export const TodoList = (props) => {
             ))}
           </div>
           {props.todoList.length >= 1 && (
-            <button className="button-clear" onClick={() => props.clearList()}>
+            <button className="button-clear" onClick={() => clearList()}>
               Clear List
               <img
                 className="delete-svg"

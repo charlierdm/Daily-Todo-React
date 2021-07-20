@@ -1,6 +1,6 @@
 import "./App.css";
 import uuid from "react-uuid";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Header } from "./Header";
 import { TodoInput } from "./TodoInput";
 import { TodoList } from "./TodoList";
@@ -12,7 +12,9 @@ function App() {
   const [todoList, setTodoList] = useState(localStorageLoad);
   const [editItem, setEditItem] = useState(false);
 
-  console.log(todoList);
+  useEffect(() => {
+    setLocalStorage(todoList);
+  }, [todoList]);
 
   const addItemToList = () => {
     const newItem = {
@@ -28,11 +30,6 @@ function App() {
 
   const setLocalStorage = (list) => {
     window.localStorage.setItem("todoList", JSON.stringify(list));
-  };
-
-  const clearList = () => {
-    setTodoList([]);
-    setLocalStorage([]);
   };
 
   const handleDeleteItem = (id) => {
@@ -69,6 +66,7 @@ function App() {
       />
       <TodoList
         todoList={todoList}
+        setTodoList={setTodoList}
         clearList={clearList}
         deleteItem={handleDeleteItem}
         editItem={handleEditItem}
