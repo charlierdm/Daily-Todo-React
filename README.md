@@ -10,6 +10,7 @@ By creating this application, I will be practicing and learning more about React
 
 ### Learning objectives and skills exercised:
 
+* Using Jest to test components.
 * Passing props to child components. 
 * Setting state using hooks and lifting state up. (Setting a Todo item and passing it to the list.)
 * Using LocalStorage to enable Todo items to persist across sessions.

@@ -16,6 +16,10 @@ function App() {
     setLocalStorage(todoList);
   }, [todoList]);
 
+  const setLocalStorage = (list) => {
+    window.localStorage.setItem("todoList", JSON.stringify(list));
+  };
+
   const addItemToList = () => {
     const newItem = {
       id: uuid(),
@@ -25,10 +29,6 @@ function App() {
     const updatedItems = [...todoList, newItem];
     setTodoList(updatedItems);
     setTodoItem("");
-  };
-
-  const setLocalStorage = (list) => {
-    window.localStorage.setItem("todoList", JSON.stringify(list));
   };
 
   const handleDeleteItem = (id) => {

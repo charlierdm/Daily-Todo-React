@@ -1,7 +1,6 @@
 import { TodoItem } from "./TodoItem";
 
 export const TodoList = (props) => {
-
   const clearList = () => {
     props.setTodoList([]);
   };

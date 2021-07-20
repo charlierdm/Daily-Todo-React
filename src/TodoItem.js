@@ -16,6 +16,8 @@ export const TodoItem = (props) => {
           width="16px"
           alt="plus-symbol"
           onClick={() => props.editItem()}
+          data-testid="edit"
+          
         />
         <img
           className="delete-svg"
@@ -23,6 +25,7 @@ export const TodoItem = (props) => {
           width="16px"
           alt="plus-symbol"
           onClick={() => props.deleteItem()}
+          data-testid="delete"
         />
       </div>
     </div>

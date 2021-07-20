@@ -16,7 +16,7 @@ const todoList = [
     item: "Wash clothes",
   },
   {
-    check: false,
+    check: true,
     id: "5bafe3-afe7-47f3-b73-18d25333bbe2",
     item: "Ride bike",
   },
