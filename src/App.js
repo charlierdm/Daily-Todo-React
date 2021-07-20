@@ -24,7 +24,6 @@ function App() {
     };
     const updatedItems = [...todoList, newItem];
     setTodoList(updatedItems);
-    setLocalStorage(updatedItems);
     setTodoItem("");
   };
 
@@ -34,7 +33,6 @@ function App() {
 
   const handleDeleteItem = (id) => {
     const newFilteredArray = todoList.filter((todo) => todo.id !== id);
-    setLocalStorage(newFilteredArray);
     setTodoList(newFilteredArray);
   };
 
@@ -44,14 +42,14 @@ function App() {
 
     setEditItem(true);
     setTodoItem(selectItem.item);
-    setLocalStorage(newFilteredArray);
     setTodoList(newFilteredArray);
   };
 
   const handleSetCheck = (id) => {
-    const selectItem = todoList.find((item) => item.id === id);
+    const updatedItems = [...todoList];
+    const selectItem = updatedItems.find((item) => item.id === id);
     selectItem.check = !selectItem.check;
-    setLocalStorage(todoList);
+    setTodoList(updatedItems);
   };
 
   return (
@@ -67,7 +65,6 @@ function App() {
       <TodoList
         todoList={todoList}
         setTodoList={setTodoList}
-        clearList={clearList}
         deleteItem={handleDeleteItem}
         editItem={handleEditItem}
         setCheck={handleSetCheck}
