@@ -5,11 +5,11 @@ import { Header } from "./Header";
 import { TodoInput } from "./TodoInput";
 import { TodoList } from "./TodoList";
 
-function App() {
-  const localStorageLoad = JSON.parse(localStorage.todoList) || {};
+export const App = () => {
+  const localStorageLoad = window.localStorage.length > 0 ? JSON.parse(localStorage.todoList) : [];
 
   const [todoItem, setTodoItem] = useState("");
-  const [todoList, setTodoList] = useState(localStorageLoad);
+  const [todoList, setTodoList] = useState(localStorageLoad );
   const [editItem, setEditItem] = useState(false);
 
   useEffect(() => {
@@ -21,6 +21,7 @@ function App() {
   };
 
   const addItemToList = () => {
+    if (todoItem === "") return;
     const newItem = {
       id: uuid(),
       item: todoItem,
@@ -37,6 +38,7 @@ function App() {
   };
 
   const handleEditItem = (id) => {
+    if (editItem) return;
     const newFilteredArray = todoList.filter((todo) => todo.id !== id);
     const selectItem = todoList.find((item) => item.id === id);
 
@@ -71,6 +73,5 @@ function App() {
       />
     </div>
   );
-}
+};
 
-export default App;
