@@ -12,9 +12,9 @@ By creating this application, I will be practicing and learning more about React
 
 * Using Jest to create unit tests per components.
 * Using Jest to create feature tests when testing the App component. 
-* Setting state using hooks and lifting state up. (Setting a Todo item and passing it to the list.)
+* Using Jest to test localstorage.
 * Using LocalStorage to enable Todo items to persist across sessions.
-* Passing props to child components.
+* Setting state using hooks and lifting state up. (Setting a Todo item and passing it to the list.)
 * Using uuid to create unique keys per Todo item. 
 * Using the spread operator to populate an array.
 * Creating a pleasing front end experience for clarity of the day ahead. 

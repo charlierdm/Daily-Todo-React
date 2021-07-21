@@ -33,7 +33,16 @@ it("deletes each todo item in localstorage when the user deletes a todo item", (
   expect(JSON.parse(localStorage.todoList).length).toEqual(0);
 });
 
-
+it("loads localstorage todo items upon rendering", () => {
+  const { unmount } = render(<App />);
+  const userInput = screen.getByPlaceholderText("Enter a Todo");
+  fireEvent.change(userInput, { target: { value: "Read my book" } });
+  fireEvent.click(screen.getByText("add todo"));
+  expect(JSON.parse(localStorage.todoList).length).toEqual(1);
+  unmount()
+  render(<App />);
+  expect(screen.getByText("Read my book")).toBeInTheDocument();
+})
 
 it("allows the user to edit a todo item", () => {
   render(<App />);
