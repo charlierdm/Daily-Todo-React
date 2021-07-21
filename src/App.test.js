@@ -15,6 +15,26 @@ it("allows the user to enter a todo item and the input bar to reset", () => {
   expect(screen.getByText("Read my book")).toBeInTheDocument();
 });
 
+it("adds each todo item to localstorage so a users todo items persist across sessions", () => {
+  render(<App />);
+  const userInput = screen.getByPlaceholderText("Enter a Todo");
+  fireEvent.change(userInput, { target: { value: "Read my book" } });
+  fireEvent.click(screen.getByText("add todo"));
+  expect(JSON.parse(localStorage.todoList).length).toEqual(1);
+});
+
+it("deletes each todo item in localstorage when the user deletes a todo item", () => {
+  render(<App />);
+  const userInput = screen.getByPlaceholderText("Enter a Todo");
+  fireEvent.change(userInput, { target: { value: "Read my book" } });
+  fireEvent.click(screen.getByText("add todo"));
+  expect(JSON.parse(localStorage.todoList).length).toEqual(1);
+  fireEvent.click(screen.getAllByTestId("delete")[0]);
+  expect(JSON.parse(localStorage.todoList).length).toEqual(0);
+});
+
+
+
 it("allows the user to edit a todo item", () => {
   render(<App />);
   const userInput = screen.getByPlaceholderText("Enter a Todo");
