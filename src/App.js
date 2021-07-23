@@ -16,9 +16,8 @@ export const App = () => {
     setLocalStorage(todoList);
   }, [todoList]);
 
-  const setLocalStorage = (list) => {
+  const setLocalStorage = (list) =>
     localStorage.setItem("todoList", JSON.stringify(list));
-  };
 
   const addItemToList = () => {
     if (todoItem === "") return;
@@ -32,27 +31,24 @@ export const App = () => {
     setTodoItem("");
   };
 
-  const filterList = (id) => todoList.filter((todo) => todo.id !== id);
+  const filterList = (id) => [...todoList].filter((todo) => todo.id != id);
+
+  const selectItem = (id) => [...todoList].find((item) => item.id === id);
 
   const handleDeleteItem = (id) => {
-    const FilteredArray = filterList(id);
-    setTodoList(FilteredArray);
+    setTodoList(filterList(id));
   };
 
   const handleEditItem = (id) => {
     if (editItem) return;
-    const FilteredArray = filterList(id);
-    const selectItem = todoList.find((item) => item.id === id);
-
     setEditItem(true);
-    setTodoItem(selectItem.item);
-    setTodoList(FilteredArray);
+    setTodoItem(selectItem(id).item);
+    setTodoList(filterList(id));
   };
 
   const handleSetCheck = (id) => {
     const updatedItems = [...todoList];
-    const selectItem = updatedItems.find((item) => item.id === id);
-    selectItem.check = !selectItem.check;
+    selectItem(id).check = !selectItem.check;
     setTodoList(updatedItems);
   };
 
