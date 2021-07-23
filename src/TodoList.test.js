@@ -22,15 +22,15 @@ const todoList = [
   },
 ];
 
-it('renders a list of todo items', () => {
-  render(<TodoList todoList={todoList} />)
+it("renders a list of todo items", () => {
+  render(<TodoList todoList={todoList} />);
   expect(screen.getByText("Zoom meeting")).toBeInTheDocument();
   expect(screen.getByText("Wash clothes")).toBeInTheDocument();
   expect(screen.getByText("Ride bike")).toBeInTheDocument();
-})
+});
 
-it('allows the user to clear the list', () => {
-  render(<TodoList todoList={todoList} setTodoList={setTodoList} />)
+it("allows the user to clear the list", () => {
+  render(<TodoList todoList={todoList} setTodoList={setTodoList} />);
   fireEvent.click(screen.getByText("Clear List"));
-  expect(setTodoList).toHaveBeenLastCalledWith([])
-})
+  expect(setTodoList).toHaveBeenLastCalledWith([]);
+});

@@ -6,10 +6,10 @@ import { TodoInput } from "./TodoInput";
 import { TodoList } from "./TodoList";
 
 export const App = () => {
-  const localStorageLoad = window.localStorage.length > 0 ? JSON.parse(localStorage.todoList) : [];
+  const localStorageLoad = localStorage.length > 0 ? JSON.parse(localStorage.todoList) : [];
 
   const [todoItem, setTodoItem] = useState("");
-  const [todoList, setTodoList] = useState(localStorageLoad );
+  const [todoList, setTodoList] = useState(localStorageLoad);
   const [editItem, setEditItem] = useState(false);
 
   useEffect(() => {
@@ -17,7 +17,7 @@ export const App = () => {
   }, [todoList]);
 
   const setLocalStorage = (list) => {
-    window.localStorage.setItem("todoList", JSON.stringify(list));
+    localStorage.setItem("todoList", JSON.stringify(list));
   };
 
   const addItemToList = () => {
@@ -74,4 +74,3 @@ export const App = () => {
     </div>
   );
 };
-
