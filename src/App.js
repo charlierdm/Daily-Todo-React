@@ -31,24 +31,24 @@ export const App = () => {
     setTodoItem("");
   };
 
-  const filterList = (id) => [...todoList].filter((todo) => todo.id != id);
-
-  const selectItem = (id) => [...todoList].find((item) => item.id === id);
-
   const handleDeleteItem = (id) => {
-    setTodoList(filterList(id));
+    const filteredList = [...todoList].filter((todo) => todo.id !== id);
+    setTodoList(filteredList);
   };
 
   const handleEditItem = (id) => {
     if (editItem) return;
+    const selectItem = [...todoList].find((item) => item.id === id);
+    const filteredList = [...todoList].filter((todo) => todo.id !== id);
     setEditItem(true);
-    setTodoItem(selectItem(id).item);
-    setTodoList(filterList(id));
+    setTodoItem(selectItem.item);
+    setTodoList(filteredList);
   };
 
   const handleSetCheck = (id) => {
     const updatedItems = [...todoList];
-    selectItem(id).check = !selectItem.check;
+    const selectItem = updatedItems.find((item) => item.id === id);
+    selectItem.check = !selectItem.check;
     setTodoList(updatedItems);
   };
 
