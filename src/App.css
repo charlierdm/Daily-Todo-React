@@ -7,8 +7,9 @@
 }
 
 h1 {
-  font-weight: bold;
+  font-weight:bolder;
   font-size: 5vh;
+  color: #8e8e8eee;
 }
 
 input {
@@ -17,6 +18,7 @@ input {
   border: none;
   padding: 5%;
   font-size: 18px;
+  color: #717171;
   transition: transform 0.3s;
 }
 
@@ -28,7 +30,7 @@ input:hover {
   text-align: center;
   border-radius: 4px;
   margin-top: 1em;
-  background-color: #91bdceee;
+  background-color: #abafb0ee;
   opacity: 90%;
 }
 

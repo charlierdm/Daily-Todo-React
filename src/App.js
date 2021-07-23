@@ -32,19 +32,21 @@ export const App = () => {
     setTodoItem("");
   };
 
+  const filterList = (id) => todoList.filter((todo) => todo.id !== id);
+
   const handleDeleteItem = (id) => {
-    const newFilteredArray = todoList.filter((todo) => todo.id !== id);
-    setTodoList(newFilteredArray);
+    const FilteredArray = filterList(id);
+    setTodoList(FilteredArray);
   };
 
   const handleEditItem = (id) => {
     if (editItem) return;
-    const newFilteredArray = todoList.filter((todo) => todo.id !== id);
+    const FilteredArray = filterList(id);
     const selectItem = todoList.find((item) => item.id === id);
 
     setEditItem(true);
     setTodoItem(selectItem.item);
-    setTodoList(newFilteredArray);
+    setTodoList(FilteredArray);
   };
 
   const handleSetCheck = (id) => {
