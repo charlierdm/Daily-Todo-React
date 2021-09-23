@@ -1,26 +1,23 @@
 import { TodoItem } from "./TodoItem";
 
-export const TodoList = (props) => {
-  const clearList = () => {
-    props.setTodoList([]);
-  };
-
+export const TodoList = ({todoList, setTodoList, deleteItem, editItem, setCheck}) => {
+  
   return (
     <>
-      {props.todoList.length > 0 && (
+      {todoList.length > 0 && (
         <div className="todo-list">
-          {props.todoList.map((todo) => (
+          {todoList.map((todo) => (
             <TodoItem
               item={todo.item}
               key={todo.id}
               checkItem={todo.check}
-              deleteItem={() => props.deleteItem(todo.id)}
-              editItem={() => props.editItem(todo.id)}
-              setCheck={() => props.setCheck(todo.id)}
+              deleteItem={() => deleteItem(todo.id)}
+              editItem={() => editItem(todo.id)}
+              setCheck={() => setCheck(todo.id)}
               data-testid="list-item"
             />
           ))}
-          <button className="button-clear" onClick={() => clearList()}>
+          <button className="button-clear" onClick={() => setTodoList([])}>
             Clear List
             <img
               className="delete-svg"
