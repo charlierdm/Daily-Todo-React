@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 2%;
+  margin-top: 0.5rem;
 }
 
 h1 {
@@ -16,7 +16,7 @@ input {
   text-align: center;
   border-radius: 4px;
   border: none;
-  padding: 5%;
+  padding: 0.7rem;
   font-size: 18px;
   color: #717171;
   transition: transform 0.3s;
