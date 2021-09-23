@@ -1,29 +1,29 @@
-export const TodoInput = (props) => {
+export const TodoInput = ({todoItem, setTodoItem, addItem, edit, setEdit}) => {
   const handleSubmit = (e) => {
     e.preventDefault();
-    props.addItem();
-    props.setEdit(false);
+    addItem();
+    setEdit(false);
   };
 
   return (
     <form className="todo-input" onSubmit={(e) => handleSubmit(e)}>
       <input
-        value={props.todoItem}
+        value={todoItem}
         type="text"
         placeholder="Enter a Todo"
-        onChange={(e) => props.setTodoItem(e.target.value)}
+        onChange={(e) => setTodoItem(e.target.value)}
       />
-      <button className={props.edit ? "button-edit" : "button-input"}>
-        {props.edit ? "edit todo" : "add todo"}
+      <button className={edit ? "button-edit" : "button-input"}>
+        {edit ? "edit todo" : "add todo"}
         <img
-          className={props.edit ? "edit-svg" : "input-svg"}
+          className={edit ? "edit-svg" : "input-svg"}
           src={
-            props.edit
+            edit
               ? process.env.PUBLIC_URL + "/edit.svg"
               : process.env.PUBLIC_URL + "/plus.svg"
           }
           width="10px"
-          alt={props.edit ? "edit symbol" : "plus-symbol"}
+          alt={edit ? "edit symbol" : "plus-symbol"}
         />
       </button>
     </form>
