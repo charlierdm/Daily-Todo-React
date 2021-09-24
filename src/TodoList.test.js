@@ -31,6 +31,6 @@ it("renders a list of todo items", () => {
 
 it("allows the user to clear the list", () => {
   render(<TodoList todoList={todoList} setTodoList={setTodoList} />);
-  fireEvent.click(screen.getByText("Clear List"));
+  fireEvent.click(screen.getByText("clear list"));
   expect(setTodoList).toHaveBeenLastCalledWith([]);
 });

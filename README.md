@@ -4,7 +4,8 @@ The aim of this project is to create a web application in which daily tasks can 
 
 By creating this application, I will be practicing and learning more about React and testing the front end experience using Jest/Reacts testing library. I've intentionally not followed any tutorials as I am learning React with the official documentation, alongside the MDN and Jest documentation as I believe this is the best way to build a thorough understanding. 
 
-![dailytodoF3](https://user-images.githubusercontent.com/75075773/126792426-c5c4dd30-13b2-45a3-a0c7-6b13902f47b8.gif)
+![dailyTodoN](https://user-images.githubusercontent.com/75075773/134721142-68ac3a81-deac-44fc-9a93-b494bb111eda.gif)
+
 
 
 

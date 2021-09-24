@@ -3,7 +3,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  box-sizing: border-box;
   margin-top: 0.5rem;
+  transition: box-shadow 0.2s;
+  animation: fadeIn 0.4s linear;
 }
 
 h1 {
@@ -38,8 +41,10 @@ input:hover {
   text-align: center;
   border-radius: 0.5rem;
   margin-top: 1em;
+  box-shadow: 0px 10px 5px rgb(80 80 80);
   background-color: #abafb0ee;
-  opacity: 90%;
+  transition: box-shadow 0.3s;
+  animation: fadeIn 1s linear;
 }
 
 .todo-item {
@@ -52,7 +57,7 @@ input:hover {
   padding: 0.8rem;
   width: 30rem;
   overflow-wrap: anywhere;
-  opacity: 80%;
+  animation: fadeIn 0.2s linear;
 }
 
 .checkbox {
@@ -72,6 +77,24 @@ button {
   padding: 0.7rem;
   font-size: 1.2rem;
   cursor: pointer;
+}
+
+@media (max-width: 786px) {
+  .todo-list {
+    min-width: -webkit-fill-available;
+  }
+  .todo-item {
+    min-width: -webkit-fill-available;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.8;
+  }
 }
 
 .pencil-bin {
