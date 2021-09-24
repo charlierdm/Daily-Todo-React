@@ -8,8 +8,8 @@
 
 h1 {
   font-weight:bolder;
-  font-size: 5vh;
-  color: #8e8e8eee;
+  font-size: 3rem;
+  color: #585858ee;
 }
 
 input {
@@ -27,19 +27,27 @@ input:hover {
 }
 
 .todo-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 50rem;
+  border: solid white;
   text-align: center;
-  border-radius: 4px;
+  border-radius: 0.5rem;
   margin-top: 1em;
   background-color: #abafb0ee;
   opacity: 90%;
 }
 
 .todo-item {
-  font-size: 25px;
-  margin: 5px;
-  padding-left: 7em;
-  padding-right: 7em;
-  padding-bottom: 1em;
+  border: solid white;
+  border-radius: 0.5rem;
+  background-color: #b7d1d8ee;
+  font-size: 2rem;
+  margin: 1rem;
+  padding: 1.5rem;
+  width: 30rem;
+  overflow-wrap: anywhere;
 }
 
 .checkbox {

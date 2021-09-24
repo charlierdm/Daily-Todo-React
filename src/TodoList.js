@@ -1,7 +1,12 @@
 import { TodoItem } from "./TodoItem";
 
-export const TodoList = ({todoList, setTodoList, deleteItem, editItem, setCheck}) => {
-  
+export const TodoList = ({
+  todoList,
+  setTodoList,
+  deleteItem,
+  editItem,
+  setCheck,
+}) => {
   return (
     <>
       {todoList.length > 0 && (
