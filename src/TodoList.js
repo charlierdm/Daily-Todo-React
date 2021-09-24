@@ -23,7 +23,7 @@ export const TodoList = ({
             />
           ))}
           <button className="button-clear" onClick={() => setTodoList([])}>
-            Clear List
+            clear list
             <img
               className="delete-svg"
               src={process.env.PUBLIC_URL + "/delete.svg"}
